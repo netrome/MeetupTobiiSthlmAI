@@ -1,15 +1,11 @@
 import torch
 import torch.nn as nn
-import torch.utils.data as tdata
-import torchvision.datasets as datasets
-import torchvision.transforms as transforms
 
-from utils import Flatten, Unflatten
+from utils import Flatten, Unflatten, Visualizer, get_dataloader
 
+import settings
 
-dataset = datasets.MNIST("~/Data/MNIST", train=True, transform=transforms.ToTensor(), target_transform=None, download=True)
-loader = tdata.DataLoader(dataset, batch_size=4, shuffle=True, num_workers=4)
-
+# Discriminator network  -----------------------------------------
 D = nn.Sequential(
         nn.Conv2d(1, 4, 4, stride=2),
         nn.LeakyReLU(0.2),
@@ -22,6 +18,7 @@ D = nn.Sequential(
         nn.Sigmoid(),
         )
 
+# Generator network  -----------------------------------------
 G = nn.Sequential(
         nn.Linear(10, 200),
         nn.LeakyReLU(0.2),
@@ -35,10 +32,10 @@ G = nn.Sequential(
 opt_D = torch.optim.Adam(D.parameters())
 opt_G = torch.optim.Adam(G.parameters())
 
-latent_point = torch.FloatTensor(4, 10)
-
-epochs = 10
-for epoch in range(epochs):
+latent_point = torch.FloatTensor(settings.batch_size, 10)
+vis = Visualizer()
+loader = get_dataloader()
+for epoch in range(settings.epochs):
     loss_G = 0
     loss_D = 0
     for i, (img, label) in enumerate(loader): 
@@ -47,7 +44,7 @@ for epoch in range(epochs):
         fake = G(latent_point)
         pred_fake = D(fake)
 
-        if i%2==4:
+        if i%2==1:
             loss_G = torch.mean(-torch.log(pred_fake))
             opt_G.zero_grad()
             loss_G.backward()
@@ -60,5 +57,7 @@ for epoch in range(epochs):
             opt_D.step()
 
         if i % 100 == 99:
-            print("Loss D: {}".format(loss_D))
+            print("Loss D: {}, Loss G: {}".format(loss_D, loss_G), end="\r")
+            vis.update_batch(img, "real")
+            vis.update_batch(fake, "fake")
 
