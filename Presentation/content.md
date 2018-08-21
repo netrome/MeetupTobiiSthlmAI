@@ -1,4 +1,4 @@
-# Title: 
+# Title: The pecularities of training GANs
 
 # Budskap
 GANs är fantastiska men fortfarande väldigt outforskade, och vi vet fortfarande väldigt lite om dem. Våga vara kreativa i era tillämpningar.
@@ -23,4 +23,6 @@ Syfte: Visa att det finns mycket frihet i konstellationen.
 
 - Företagsvärlden är tråkig, flest iterationer vinner. /Magnus MackAldener (Dra parallell till vetenskap och säg att många iterationer är en framgångsfaktor även där)
 
+
+Introidé: Börja med bilder på misslyckad träning, gå sedan igenom hur det funkar, därefter egenheter och avsluta sedan med "mer lyckade" bilder.
 
