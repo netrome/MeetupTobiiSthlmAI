@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>DB18Mårten</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <p id="clock"></p>
+        <div id="impress" data-width="1024" data-height="768" data-transition-duration="1000" data-max-scale="2">
+            <div id="intro" class="step statement" data-x="0" data-y="0" data-z="0">
+                <br/><br/><br/><br/>
+                <h1>The peculiarities of training GANs</h1>
+                <p>Mårten Nilsson</p>
+            </div>
+
+            <div class="step" data-x="1000" data-y="0" data-z="0">
+                <img src="ping-pong.png" />
+            </div>
+
+            <div class="step" data-x="2000" data-y="0" data-z="0">
+                <h1>Let's write this in code<h2>
+            </div>
+
+            <!-- Generated images here ============================================= --> 
+
+            <div class="step" data-x="-100" data-y="0" data-z="-1500">
+                <p class="imgtext">Real</p>
+                <img src="./images/reference_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="600" data-z="-1500">
+                <p class="imgtext">WGAN</p>
+                <img src="./images/generated/wasserstein_fake_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="1200">
+                <p class="imgtext">VAE</p>
+                <img src="./images/generated/vae_fake_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="1800">
+                <p class="imgtext">AEGAN</p>
+                <img src="./images/generated/aegan_fake_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-x="800" data-y="0" data-z="-1500">
+                <p class="imgtext">Real</p>
+                <img src="./images/ref_g6_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="600" data-z="-1500">
+                <p class="imgtext">WGAN</p>
+                <img src="./images/generated/wgan_g6_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="1200">
+                <p class="imgtext">VAE</p>
+                <img src="./images/generated/vae_g6_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-y="1800">
+                <p class="imgtext">AEGAN</p>
+                <img src="./images/generated/aegan_g6_6x4.png" height="600px"/>
+            </div>
+
+            <div class="step" data-x="1600" data-y="0">
+                <h1>Results: Synthetic data</h1>
+                <table>
+                    <tr><th>WGAN</th><th>VAE</th><th>AEGAN</th><th>Original</th></tr>
+                    <tr><th>0.8132</th><th>0.159</th><th>0.148</th><th>0.09607</th></tr>
+                </table>
+            </div>
+
+            <div class="step" data-y="800">
+                <h1>Results: Real world data</h1>
+                <table>
+                    <tr><th>WGAN</th><th>VAE</th><th>AEGAN</th><th>Original</th></tr>
+                    <tr><th>0.9966</th><th>0.3445</th><th>0.2084</th><th>0.11456</th></tr>
+                </table>
+            </div>
+
+            <div class="step" data-y="2400">
+                <h1>Concluding remarks</h1>
+                Synthetic data can never replace our need for real data, <br/>
+                but it can complement our existing data.
+            </div>
+
+            <div id="overview" class="step" data-x="800" data-y="-500" data-z="3800" data-rotate-x="30">
+            </div>
+
+
+        </div>
+    </body>
+
+<script src="impress.js"></script>
+<script>impress().init();</script>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("clock").innerHTML =
+        h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+startTime()
+</script>
+</html>

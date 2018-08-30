@@ -1,5 +1,106 @@
 body {
-    background-color: red;
-    color: green;
+    background-color: #0e103e;
+    font-family: Helvetica;
+    font-size: 32px;
+    color: white;
+    transition: all 1s ease-in;
+}
+
+h1 { 
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+li {
+    margin: 16px;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+}
+
+table {
+    border: 1px solid #01AEE9;
+}
+
+.teximg{
+    position: relative;
+    height: 38px;
+    top: 12px;
+
+}
+
+.step {
+    min-width: 700px;
+    min-height: 700px;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
+    opacity: 0.2;
+    transition: opacity 0.5s ease-in;
+}
+
+.wide {
+    min-width: 900px;
+}
+
+.purple {
+    background-color: #702076;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step.future {
+    opacity: 0;
+}
+
+.slide.future {
+    opacity: 1;
+}
+
+.slide {
+    min-width: 1000px;
+    min-height: 744px;
+    background-color: #F2F2F5;
+    color: #0e103e;
+    opacity: 1;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 2px #33333333;
+}
+
+.backside {
+    background-color: #0e103e;
+}
+
+.impress-on-intro {
+    background-color: #334455;
+}
+
+.impress-on-figs1 {
+    background-color: #01AEE9;
+}
+
+.imgtext {
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    text-shadow: 5, 5, 5, 5, black;
+}
+
+#clock {
+    z-index: 100;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #01AEE9;
+    font-size: 25px;
 }
 
