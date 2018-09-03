@@ -60,7 +60,7 @@ table {
     opacity: 0;
 }
 
-.slide.future {
+.slide.present {
     opacity: 1;
 }
 
@@ -69,7 +69,7 @@ table {
     min-height: 744px;
     background-color: #F2F2F5;
     color: #0e103e;
-    opacity: 1;
+    opacity: 0;
     margin: auto;
     padding: 20px;
     box-sizing: border-box;

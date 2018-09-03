@@ -33,8 +33,11 @@ opt_D = torch.optim.Adam(D.parameters())
 opt_G = torch.optim.Adam(G.parameters())
 
 latent_point = torch.FloatTensor(settings.batch_size, 10)
+
 vis = Visualizer()
+
 loader = get_dataloader()
+
 for epoch in range(settings.epochs):
     loss_G = 0
     loss_D = 0

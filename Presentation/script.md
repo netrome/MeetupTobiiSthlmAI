@@ -51,7 +51,17 @@ First define G and D as neural networks **network definitions appear**
 
 In pytorch we train these with optimizers **optimizers appear**
 
+G needs some input to generate the images **latent point**
 
+We also need some utilities before we create the training loop **vis and dataloader apperas**
+
+Now we're ready to define the loop **loop boilerplate**
+
+The training loop alternates between updating the generator **generator update** and discriminator **discriminator update**
+
+The key here is that G and D have different objectives, and both are dependent on the other one. As you can see, D is trained with the normal corss entropy loss (ignoring a factor of 0.5). G on the other hand is trained with the negative log likelihood on the fake predictions to maximize the prediction score that D gives on fake images. When D is strong enough, the only way for G to minimize its objective is to generate images that are indistinguishable from the original data. Let's see this in action
+
+## Live training of GAN
 
 
 # Content #2: What could possibly go wrong?
@@ -62,6 +72,8 @@ In pytorch we train these with optimizers **optimizers appear**
 - Mode collapse
 
 - Sparse gradients
+
+- Momentum in optimizer (The parameters I've shown are bad)
 
 # Content #3: My GAN
 
