@@ -24,7 +24,7 @@ The objectives of this presentation is to give you an understanding of:
 
 - Why training GANs differ from training a normal DNN
 
-- Show examples of data created by GANs
+- Show examples of GANs in action
 
 # 6. Build Ethos
 I have learned a lot about GANs in the last year.
@@ -63,15 +63,22 @@ The key here is that G and D have different objectives, and both are dependent o
 
 ## Live training of GAN
 
-
 # Content #2: What could possibly go wrong?
 - Batch normalization
 
-- Signal magnitude escalation
-
 - Mode collapse
 
+- Non-convergence
+
+- Vanishing gradients
+
+- Exploding gradients
+
 - Sparse gradients
+
+- Imbalanced networks
+
+- Repeating update loop
 
 - Momentum in optimizer (The parameters I've shown are bad)
 
@@ -83,9 +90,16 @@ Combination of autoencoder and GAN, exists many variants but this constellation 
 
 ------------------------ End ---------------------
 # 1. Questions
+Before I summarize, do we have any questions?
 
+One last question.
 # 2. Summary
+Great, so we have gone through the code to train a GAN, we have seen how it beahves on MNIST. We have also gone through what to look out for when working with GANs, and I have shown how I tackled these problems in my project.
 
 # 3. Confirm objectives
+The objectives of this presentation was to explain how GANs work. Also rather than focusing on what is the state of the art right now another objective was to warn you about common problems with these models. I hope you feel that what you have gained today is both interesting and will be helpful to you in the future.
 
 # 4. Final (limbic uppercut)
+If nothing else, the story of GANs is a great example of what can be accomplished if you dare to listen to your gut when your friends say you're wrong.
+## Picture of disagreeing people
+
