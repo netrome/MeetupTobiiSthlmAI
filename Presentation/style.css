@@ -3,7 +3,7 @@ body {
     font-family: Helvetica;
     font-size: 32px;
     color: white;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 h1 { 
@@ -16,6 +16,10 @@ h2 {
 
 li {
     margin: 16px;
+}
+
+pre {
+    font-size: 16px;
 }
 
 th, td {
@@ -76,8 +80,16 @@ table {
     box-shadow: 1px 1px 2px 2px #33333333;
 }
 
-.backside {
-    background-color: #0e103e;
+.snippet {
+    transition: 0.1s linear;
+}
+
+.snippet.past {
+    opacity: 0;
+}
+
+.stick.past {
+    opacity: 1;
 }
 
 .impress-on-intro {

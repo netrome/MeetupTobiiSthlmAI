@@ -20,14 +20,13 @@
                 <img src="ping-pong.png" />
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0"> 
                 <h1>Let's write this in code</h1>
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2001" data-y="0" data-z="0" data-transition-duration="0">
                 <h1>Let's write this in code</h1>
-                <code> 
-                    <pre>
+                <pre class="prettyprint">
 D = nn.Sequential(
         nn.Conv2d(1, 4, 4, stride=2),
         nn.LeakyReLU(0.2),
@@ -39,14 +38,12 @@ D = nn.Sequential(
         nn.Linear(10, 1),
         nn.Sigmoid(),
         )
-                    </pre>
-                </code>
+                </pre>
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
                 <h1>Let's write this in code</h1>
-                <code> 
-                    <pre>
+                <pre class="prettyprint">
 D = nn.Sequential(...)
 
 G = nn.Sequential(
@@ -58,28 +55,24 @@ G = nn.Sequential(
         nn.ConvTranspose2d(4, 1, 4, stride=2),
         nn.Sigmoid(),
         )
-                    </pre>
-                </code>
+                </pre>
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
                 <h1>Let's write this in code</h1>
-                <code> 
-                    <pre>
+                <pre class="prettyprint">
 D = nn.Sequential(...)
 
 G = nn.Sequential(...)
 
 opt_D = torch.optim.Adam(D.parameters())
 opt_G = torch.optim.Adam(G.parameters())
-                    </pre>
-                </code>
+                </pre>
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
                 <h1>Let's write this in code</h1>
-                <code> 
-                    <pre>
+                <pre class="prettyprint">
 D = nn.Sequential(...)
 
 G = nn.Sequential(...)
@@ -92,14 +85,12 @@ latent_point = torch.FloatTensor(settings.batch_size, 10)
 vis = Visualizer()
 
 loader = get_dataloader()
-                    </pre>
-                </code>
+                </pre>
             </div>
 
-            <div class="step slide" data-x="2000" data-y="0" data-z="0">
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
                 <h1>Let's write this in code</h1>
-                <code> 
-                    <pre>
+                <pre class="prettyprint">
 D = nn.Sequential(...)
 
 G = nn.Sequential(...)
@@ -121,8 +112,72 @@ for epoch in range(settings.epochs):
 
         fake = G(latent_point)
         pred_fake = D(fake)
-                    </pre>
-                </code>
+                </pre>
+            </div>
+
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
+                <pre class="prettyprint">
+D = nn.Sequential(...)
+
+G = nn.Sequential(...)
+
+opt_D = torch.optim.Adam(D.parameters())
+opt_G = torch.optim.Adam(G.parameters())
+
+latent_point = torch.FloatTensor(settings.batch_size, 10)
+
+vis = Visualizer()
+
+loader = get_dataloader()
+
+for epoch in range(settings.epochs):
+    # ...
+    for i, (img, label) in enumerate(loader): 
+        latent_point.normal_()
+
+        fake = G(latent_point)
+        pred_fake = D(fake)
+
+        if i%2==1:
+            loss_G = torch.mean(-torch.log(pred_fake))
+            opt_G.zero_grad()
+            loss_G.backward()
+            opt_G.step()
+                </pre>
+            </div>
+
+            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
+                <pre class="prettyprint">
+D = nn.Sequential(...)
+
+G = nn.Sequential(...)
+
+opt_D = torch.optim.Adam(D.parameters())
+opt_G = torch.optim.Adam(G.parameters())
+
+latent_point = torch.FloatTensor(settings.batch_size, 10)
+
+vis = Visualizer()
+
+loader = get_dataloader()
+
+for epoch in range(settings.epochs):
+    # ...
+    for i, (img, label) in enumerate(loader): 
+        latent_point.normal_()
+
+        fake = G(latent_point)
+        pred_fake = D(fake)
+
+        if i%2==1:
+            loss_G = torch.mean(-torch.log(pred_fake))
+            # Update G
+
+        else:
+            pred_real = D(img)
+            loss_D = torch.mean(-torch.log(1 - pred_fake) - torch.log(pred_real))
+            # Update D
+                </pre>
             </div>
 
 
@@ -197,9 +252,10 @@ for epoch in range(settings.epochs):
         </div>
     </body>
 
-<script src="impress.js"></script>
-<script>impress().init();</script>
-<script>
+    <script src="impress.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+    <script>impress().init();</script>
+    <script>
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -216,5 +272,5 @@ function checkTime(i) {
     return i;
 }
 startTime()
-</script>
+    </script>
 </html>
