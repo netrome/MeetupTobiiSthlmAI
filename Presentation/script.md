@@ -84,6 +84,14 @@ The key here is that G and D have different objectives, and both are dependent o
 
 # Content #3: My GAN
 
+The problem I worked on was, is it possible to train a neural network on generated images?
+
+## Slide with problem formulation
+
+The focus was therefore not to create the best high-resolution GAN. Instead, the goal was to create a GAN capable of creating both images and annotations without loosing any important modes of data.
+
+After trying out different models, I came up with a combination of GANs and autoencoders that solved our problem with capturing the full data distribution.
+
 Combination of autoencoder and GAN, exists many variants but this constellation was sufficient for my purposes.
 
 ## Bild på konstellation
