@@ -17,7 +17,11 @@
             </div>
 
             <div class="step" data-x="1000" data-y="0" data-z="0">
-                <img src="ping-pong.png" />
+                <h1>Objectives</h1>
+                <ul>
+                    <li>Learn how GANs work</li>
+                    <li>Avoid traps</li>
+                    <li>Let GANs amaze us</li>
             </div>
 
             <div class="step snippet" data-x="2000" data-y="0" data-z="0"> 
@@ -146,7 +150,7 @@ for epoch in range(settings.epochs):
                 </pre>
             </div>
 
-            <div class="step snippet" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
+            <div class="step snippet stick" data-x="2000" data-y="0" data-z="0" data-transition-duration="0">
                 <pre class="prettyprint">
 D = nn.Sequential(...)
 
@@ -180,6 +184,50 @@ for epoch in range(settings.epochs):
                 </pre>
             </div>
 
+            <div class="step" data-x="2300" data-y="0" data-z="0" data-scale="2">
+                <br /><br /><br /><br />
+                <h1>What could possibly go wrong?</h1>
+            </div>
+
+            <div class="step" data-x="2300" data-y="-100" data-z="0" data-scale="0.5">
+                <ul>
+                    <li>Non-convergence</li>
+                    <li>Unstable training</li>
+                    <li>Mode collapse</li>
+                </ul>
+            </div>
+
+            <div class="step" data-x="1800" data-y="250" data-z="0" data-scale="0.5">
+                <ul>
+                    <li>Vanishing gradients</li>
+                    <li>Sparse gradients</li>
+                    <li>Exploding gradients</li>
+                </ul>
+            </div>
+
+            <div class="step" data-x="1900" data-y="-140" data-z="0" data-scale="0.5">
+                <ul>
+                    <li>Imbalanced networks</li>
+                </ul>
+            </div>
+
+            <div class="step" data-x="2050" data-y="-100" data-z="0" data-scale="0.5">
+                <ul>
+                    <li>Momentum-based optimizer</li>
+                </ul>
+            </div>
+
+            <div class="step" data-x="2000" data-y="0" data-z="500" data-scale="1">
+                <h1>What about Batch Normalization?</h1>
+            </div>
+
+            <div class="step" data-x="2000" data-y="0" data-z="1000" data-scale="1">
+                <img src="itsatrap.jpg"/>
+            </div>
+
+            <div class="step" data-x="2000" data-y="0" data-z="1500" data-scale="1">
+                <img src="batch_dependence.png"/>
+            </div>
 
             <!-- Generated images here ============================================= --> 
 

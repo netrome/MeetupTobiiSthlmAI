@@ -82,6 +82,9 @@ The key here is that G and D have different objectives, and both are dependent o
 
 - Momentum in optimizer (The parameters I've shown are bad)
 
+Enumerate these and follow the slides. What about batch norm? It's a trap! This is an example of two batches generated from the same generator. What you can see is that there are clear correlations between the images within the individual batches, which obviously is an undesirable property.
+
+
 # Content #3: My GAN
 
 The problem I worked on was, is it possible to train a neural network on generated images?
