@@ -84,6 +84,15 @@ The key here is that G and D have different objectives, and both are dependent o
 
 Enumerate these and follow the slides. What about batch norm? It's a trap! This is an example of two batches generated from the same generator. What you can see is that there are clear correlations between the images within the individual batches, which obviously is an undesirable property.
 
+So how do we solve these issues?
+
+## Slide solution
+
+Many authors claim to stabilize the training of GANs. They have proposed methods like WGAN, ACGAN, LSGAN, VAEGAN, alternative normalization schemes such as weight normalization or spectral normalization, progressively growing the networks during training etc.
+
+Despite all of this, the stability of GANs is still considered an open problem and no single solution have emerged as the silver bullet. However, this means there is a big pot of tricks that you can try out to solve your problems. Or if you are researching, you might be the one finally solving this. **pause**
+
+I did not find a universal solution when I worked with GANs, but I did manage to find the tricks I needed to get my GAN working. 
 
 # Content #3: My GAN
 
@@ -93,11 +102,31 @@ The problem I worked on was, is it possible to train a neural network on generat
 
 The focus was therefore not to create the best high-resolution GAN. Instead, the goal was to create a GAN capable of creating both images and annotations without loosing any important modes of data.
 
-After trying out different models, I came up with a combination of GANs and autoencoders that solved our problem with capturing the full data distribution.
+I worked on images of eyes, and wanted to train a neural network to find the pupils in the images. Therefore I wanted the GAN to generate both images of eyes and pupil annotations.
 
-Combination of autoencoder and GAN, exists many variants but this constellation was sufficient for my purposes.
+## 2-channel data image
 
-## Bild på konstellation
+So the GAN would look something like this. 
+
+## GAN 2-channel image
+
+On my first attempts this is how the training looked:
+
+## PRGAN training
+
+So I had to do something. After some experimenting I found three tricks that helped my model for this task
+
+## Slide: what I did
+
+First and foremost I based my experiments on an existing architecture, but I had to tweak it a bit to make it work better with my data.
+
+Secondly, I don't know why but Adamax have always worked better for me than any other optimization strategy.
+
+Latstly, I made a constellation where the GAN was trained simultaneously with an autoencoder such that the generator and decoder shared the parameters.
+
+The end result was actually quite promising, let's take a look at some of the images before we round up
+
+## Go through images
 
 ------------------------ End ---------------------
 # 1. Questions
@@ -111,6 +140,4 @@ Great, so we have gone through the code to train a GAN, we have seen how it beah
 The objectives of this presentation was to explain how GANs work. Also rather than focusing on what is the state of the art right now another objective was to warn you about common problems with these models. I hope you feel that what you have gained today is both interesting and will be helpful to you in the future.
 
 # 4. Final (limbic uppercut)
-If nothing else, the story of GANs is a great example of what can be accomplished if you dare to listen to your gut when your friends say you're wrong.
-## Picture of disagreeing people
-
+Now I hope you feel better equipped to juggle with GANs. Thank you!

@@ -96,8 +96,9 @@ table {
     background-color: black;
 }
 
-.impress-on-figs1 {
-    background-color: #01AEE9;
+.impress-on-fig1,
+.impress-on-fig2 {
+    background-color: white;
 }
 
 .imgtext {
