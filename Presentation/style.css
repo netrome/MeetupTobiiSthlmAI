@@ -117,3 +117,7 @@ table {
     font-size: 25px;
 }
 
+.me {
+    background-image: url("./me_drink.jpg");
+    background-size: cover;
+}

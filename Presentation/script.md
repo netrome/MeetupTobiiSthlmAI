@@ -5,8 +5,11 @@ Good evening everyone, and welcome to my presentation on GANs.
 I am honored to be here tonigt to give you this talk. I know many of you have not been here at Tobii before and I appreciate that you took the time and traveled here to hear about unsupervised learning.
 
 # 3. Attention grabber
+How many here have ever trained a neural network before? -good
 
-Now, have any one of you ever had a heated argument with your friends?
+How many of you have ever trained a generative adversarial network before?
+
+Now, how many of you ever had a heated argument with your friends? **pause** -Awesome, that's all you need.
 
 Imagine you're at a bar with your friends discussing generative models. They are working on a project, but none of their algorithms work nearly as good as they would hope. You suddenly get a crazy yet simple idea that you are convinced will work, so you try to persuade them to do this. But your friends do not beleive in your idea and argues that it is doomed to fail. 
 
@@ -15,7 +18,7 @@ What would you do when you get home, realize that it is late and go to sleep or 
 This was the situation Ian Goodfellow was in four years ago. He found out the very same night that his idea worked. Now, four years later we know that what he did that night drastically changed the landscape of unsupervised learning.
 
 # 4. Subject/agenda
-This talk is called "The pecularities of training GANs".
+This talk is called "The pecularities of training GANs", and I am Mårten Nilsson.
 
 ## Title slide
 
@@ -24,20 +27,24 @@ During this talk we will learn about GANs by creating one from scratch. Then I w
 # 5. Objectives (why)
 The objectives of this presentation is to give you an understanding of:
 
-- How GANs work
+- How GANs work.
 
-- Why training GANs differ from training a normal DNN
+- Why training GANs differ from training a normal DNN.
 
 - Show results from my personal work with GANs.
 
 # 6. Build Ethos
-I have learned a lot about GANs in the last year.
+I will be your guide throghout this talk.
+
+## Personal picture
 
 Currently, I am an Algorithm Engineer at Tobii. I have recently finished the Machine Learning Master's Programme at KTH where I wrote my thesis on GANs, and I find these models super weird, horrible and amazing at the same time. But don't just take my word for it,
 
 Yann LeCun says GANs are: “the coolest idea in deep learning in the last 20 years.”
 
 And it is not just Yann LeCun. All the big companies, Facebook, Google, Apple, NVIDIA etc. are publishing loads of research on GANs. At Tobii we are especially interested since both Google and Apple use GANs for gaze estimation, which is our core business. You can imagine that wee need to be on our toes.
+
+## Blank slide
 
 # 7. Practical info
 Before we dig in, let's take some practical info. The presentation is around X minutes. There will be time reserved for questions before I summarize the presentation, but please don't hesitate to ask any questions as we go.
