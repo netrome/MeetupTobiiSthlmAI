@@ -1,5 +1,5 @@
 # 1. Polite phrase
-Good evening everyone, and welcome to my presentation on GANs.
+Good evening everyone, and welcome to my presentation on GANs.  
 
 # 2. Respect phrase
 I am honored to be here tonigt to give you this talk. I know many of you have not been here at Tobii before and I appreciate that you took the time and traveled here to hear about unsupervised learning.
@@ -38,11 +38,13 @@ I will be your guide throghout this talk.
 
 ## Personal picture
 
-Currently, I am an Algorithm Engineer at Tobii. I have recently finished the Machine Learning Master's Programme at KTH where I wrote my thesis on GANs, and I find these models super weird, horrible and amazing at the same time. But don't just take my word for it,
+This is a picture of me during my thesis project trying to absorb as much knowledge of GANs as I could, from the infinite stream of publications on GANs. As you might know, there is a huge amount of research on GANs being published constantly, so it is not just I who find these models interesting.
+
+** ignore ** Currently, I am an Algorithm Engineer at Tobii. I have recently finished the Machine Learning Master's Programme at KTH where I wrote my thesis on GANs, and I find these models super weird, horrible and amazing at the same time. But don't just take my word for it,
 
 Yann LeCun says GANs are: “the coolest idea in deep learning in the last 20 years.”
 
-And it is not just Yann LeCun. All the big companies, Facebook, Google, Apple, NVIDIA etc. are publishing loads of research on GANs. At Tobii we are especially interested since both Google and Apple use GANs for gaze estimation, which is our core business. You can imagine that wee need to be on our toes.
+And the publications are not only from crazy scientists. All the big companies, Facebook, Google, Apple, NVIDIA etc. are publishing loads of research on GANs. At Tobii we are especially interested since both Google and Apple use GANs for gaze estimation, which is our core business. You can imagine that wee need to be on our toes.
 
 ## Blank slide
 
