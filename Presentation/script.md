@@ -49,13 +49,15 @@ And the publications are not only from crazy scientists. All the big companies, 
 ## Blank slide
 
 # 7. Practical info
-Before we dig in, let's take some practical info. The presentation is around X minutes. There will be time reserved for questions before I summarize the presentation, but please don't hesitate to ask any questions as we go.
+Before we dig in, let's take some practical info. The presentation is around X minutes. There will be time reserved for questions before I summarize, but please don't hesitate to ask any questions as we go.
 
 ------------------------ Main --------------------
 # Content #1: Building a GAN
 So how do GANs work? What is the key idea?
 
-## Slide: adversarial game pic (Artist and critic, pasted G and D on them)
+## Slide: adversarial game pic (Artist and critic)
+If we return once more to the problem of generating images with neural network, the big issue is how to define the loss funtion...
+
 -- Explain how G and D learn by analogy --
 
 To fully understand how this works let's translate this to code.
