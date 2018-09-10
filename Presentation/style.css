@@ -108,6 +108,10 @@ table {
     text-shadow: 5, 5, 5, 5, black;
 }
 
+.narrow {
+    width: 400px;
+}
+
 #clock {
     z-index: 100;
     position: fixed;
